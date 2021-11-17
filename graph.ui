@@ -40,22 +40,32 @@
    </item>
    <item>
     <property name="text">
-     <string>11번가</string>
+     <string>맨투맨</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>지마켓</string>
+     <string>셔츠</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>옥션</string>
+     <string>청바지</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>신세계</string>
+     <string>슬랙스</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>코트</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>패딩</string>
     </property>
    </item>
   </widget>
