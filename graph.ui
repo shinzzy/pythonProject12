@@ -6,24 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
+    <width>852</width>
     <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>801</width>
-     <height>521</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
-  </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
@@ -85,14 +74,27 @@
   <widget class="QPushButton" name="pushButton_goback">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>550</y>
-     <width>101</width>
-     <height>31</height>
+     <x>520</x>
+     <y>570</y>
+     <width>89</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text">
     <string>goback</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>821</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

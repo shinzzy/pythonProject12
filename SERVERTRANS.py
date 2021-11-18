@@ -329,6 +329,8 @@ for a in range(0,5):
     print("#############################[제품 가격 가져오는중]##########################")
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
+    if len(story44[a]) == 2:
+        story44[a] = "0"
 
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
@@ -462,6 +464,8 @@ for a in range(0,5):
     print("#############################[제품 가격 가져오는중]##########################")
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
+    if len(story44[a]) == 2:
+        story44[a] = "0"
 
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
@@ -594,6 +598,9 @@ for a in range(0,5):
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
 
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
     story44[a] = story44[a].replace("</strong>", "")
@@ -724,6 +731,9 @@ for a in range(0,5):
     print("#############################[제품 가격 가져오는중]##########################")
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
 
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
@@ -858,6 +868,9 @@ for a in range(0,5):
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
 
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
     story44[a] = story44[a].replace("</strong>", "")
@@ -988,6 +1001,9 @@ for a in range(0,5):
     print("#############################[제품 가격 가져오는중]##########################")
     story44.append(str(soup.select(
         "#{} > div > a > div.pname > div.price_info.cfix > span > strong".format(ing[a]))) + "원")
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
 
     story44[a] = story44[a].replace("[", "")
     story44[a] = story44[a].replace("]", "")
@@ -1138,6 +1154,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1270,6 +1290,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1278,6 +1302,7 @@ for a in range(0,5):
     ing3[a] = ing3[a].replace(")", "")
     ing3[a] = ing3[a].replace("<!-- -->", "")
     ing3[a] = ing3[a].replace('</span>', "")
+
     ing3[a] = ing3[a] + "건"
 
     print("ing3[a] : ", ing3[a])
@@ -1291,7 +1316,9 @@ for a in range(0,5):
     ing4[a] = ing4[a].replace('data-montelena-page="1"', "")
     ing4[a] = ing4[a].replace('data-montelena-keyword="300023507"', "")
     ing4[a] = ing4[a].replace('data-montelena-tracking_id="e4098p4052r3217m6112d5s1022i{}"'.format(i), "")
-    ing4[a] = ing4[a].replace('class="image__item" src="//pics.gmarket.co.kr/pc/single/kr/snowwhite/common/lazyload_image_itemcard_300x300.png"/>', "")
+    ing4[a] = ing4[a].replace(
+        'class="image__item" src="//pics.gmarket.co.kr/pc/single/kr/snowwhite/common/lazyload_image_itemcard_300x300.png"/>',
+        "")
     ing4[a] = ing4[a].replace('</a>', "")
     ing4[a] = ing4[a].replace('data-montelena-request_id=', "")
     ing4[a] = ing4[a].replace('data-montelena-tab="a"', "")
@@ -1310,23 +1337,25 @@ for a in range(0,5):
     ing4[a] = ing4[a].replace('href=', "")
     ing4[a] = ing4[a].replace('[', "")
     ing4[a] = ing4[a].replace(']', "")
+    ing4[a] = ing4[a].replace('data-montelena-tracking_id=', "")
+    ing4[a] = ing4[a].replace('e4098p4052r3217m6112d7s1022i5', "")
     ing4[a] = ing4[a].replace('    ', "")
     ing4[a] = ing4[a].replace('   ', "")
     ing4[a] = ing4[a].split('"')
 
     print("ing4[a] : ", ing4[a])
-    print("ing4[a][1] :" ,ing4[a][1])
-    if a == 2:
-        if len(ing4[a]) < 10:
-            sql = 'insert into shirts values("G마켓", "셔츠", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a],ing2[a],ing3[a], ing4[a][7])
-            cur.execute(sql)
-            conn.commit()
-        else:
-            sql = 'insert into shirts values("G마켓", "셔츠", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a],ing2[a],ing3[a], ing4[a][9])
-            cur.execute(sql)
-            conn.commit()
+    print("ing4[a][1] :" ,ing4[a][7])
+    print("len(ing4[a][7]) :", len(ing4[a]))
+
+    if len(ing4[a]) >= 10:
+        print("시작시시시시시")
+        sql = 'insert into shirts values("G마켓", "셔츠", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a],ing2[a],ing3[a], ing4[a][9])
+        cur.execute(sql)
+        conn.commit()
     else:
+        print("시작시시시시시2")
         sql = 'insert into shirts values("G마켓", "셔츠", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a][7])
+        print(sql)
         cur.execute(sql)
         conn.commit()
 
@@ -1413,6 +1442,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1545,6 +1578,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1678,6 +1715,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1718,15 +1759,27 @@ for a in range(0,5):
     ing4[a] = ing4[a].replace('href=', "")
     ing4[a] = ing4[a].replace('[', "")
     ing4[a] = ing4[a].replace(']', "")
+    ing4[a] = ing4[a].replace('data-montelena-tracking_id=', "")
+    ing4[a] = ing4[a].replace('e4098p4052r3217m6112d7s1022i5', "")
     ing4[a] = ing4[a].replace('    ', "")
     ing4[a] = ing4[a].replace('   ', "")
     ing4[a] = ing4[a].split('"')
 
     print("ing4[a] : ", ing4[a])
     print("ing4[a][1] :" ,ing4[a][1])
-    sql = 'insert into outers values("G마켓", "코트", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a][7])
-    cur.execute(sql)
-    conn.commit()
+    print("len(ing4[a][7]) :" , len(ing4[a]))
+
+    if len(ing4[a]) >= 10:
+        print("시작시시시시시")
+        sql = 'insert into outers  values("G마켓", "코트", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a],ing2[a],ing3[a], ing4[a][9])
+        cur.execute(sql)
+        conn.commit()
+    else:
+        print("시작시시시시시2")
+        sql = 'insert into outers  values("G마켓", "코트", {}, "{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a][7])
+        print(sql)
+        cur.execute(sql)
+        conn.commit()
 
     print("######################[제품 이미지 링크 가져오는중]###########################")
     story66.append(ing4[a][1])
@@ -1811,6 +1864,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section__inner-content-body-container > div:nth-child(2) > div:nth-child({}) > div > div.box__information > div.box__information-score > ul > li.list-item.list-item__feedback-count > span.text".format(i))))
+
+    if len(story44[a]) == 2:
+        story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -1956,8 +2013,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -2092,8 +2151,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -2228,8 +2289,11 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -2364,8 +2428,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -2499,8 +2565,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -2633,8 +2701,10 @@ for a in range(0,5):
     print("######################[제품 리뷰갯수 가져오는중]###########################")
     story44.append(str(soup.select(
         "#section--inner_content_body_container > div:nth-child(2) > div:nth-child({}) > div > div > div.section--itemcard_info > div.section--itemcard_info_score > ul > li.item.reviewcnt > span.text--reviewcnt".format(i))))
+
     if len(story44[a]) == 2 :
         story44[a] = "0"
+
     ing3.append(story44[a])
     ing3[a] = ing3[a].replace("[", "")
     ing3[a] = ing3[a].replace("]", "")
@@ -3778,6 +3848,5 @@ while True:
             clientSocket.close()
         except Exception as e:
             print(e)
-
 
 
