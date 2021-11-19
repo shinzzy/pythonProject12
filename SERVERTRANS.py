@@ -1,221 +1,8 @@
-# # # ##############################파일 자동전송
-# # import socket
-# # import zipfile
-# # import os
-# #
-# # HOST = socket.gethostname()
-# # PORT = 5002
-# # ADDR = (HOST, PORT)
-# # BUFF_SIZE = 1024
-# #
-# # serverSocket = socket.socket()
-# #
-# # serverSocket.bind(ADDR)
-# # serverSocket.listen(5)
-# #
-# # print ('Server waiting...')
-# #
-# # while True:
-# #     clientSocket, addr = serverSocket.accept()
-# #     print ('Connection from', addr)
-# #     data = clientSocket.recv(BUFF_SIZE)
-# #     print('client : ' + data.decode())
-# #     filename='iu1.png'
-# #     f = open(filename,'rb')
-# #     l = f.read(BUFF_SIZE)
-# #     while (l):
-# #         print('sending data...')
-# #         clientSocket.send(l)
-# #         print('(sent)',repr(l))
-# #         l = f.read(BUFF_SIZE)
-# #     f.close()
-# #     print('Done sending')
-# #
-# # clientSocket.close()
-#
-#
-#
-#
-#
-#
-# # ##############################파일 이름입력해서 받기
-# # from socket import *
-# # from os.path import exists
-# # import sys
-# # import zipfile
-# # import os
-# # serverSock = socket(AF_INET, SOCK_STREAM)
-# # serverSock.bind(('', 8087))
-# # serverSock.listen(1)
-# #
-# # connectionSock, addr = serverSock.accept()
-# #
-# # print(str(addr),'에서 접속했습니다')
-# #
-# # filename = connectionSock.recv(1024) #클라이언트한테 파일이름(이진 바이트 스트림 형태)을 전달 받는다
-# # print('받은 데이터 : ', filename.decode('utf-8')) #파일 이름을 일반 문자열로 변환한다
-# # data_transferred = 0
-# #
-# # if not exists(filename):
-# #     print("no file")
-# #     sys.exit()
-# #
-# # print("파일 %s 전송 시작" %filename)
-# # with open(filename, 'rb') as f:
-# #     try:
-# #         data = f.read(1024) #1024바이트 읽는다
-# #         while data: #데이터가 없을 때까지
-# #             data_transferred += connectionSock.send(data) #1024바이트 보내고 크기 저장
-# #             data = f.read(1024) #1024바이트 읽음
-# #     except Exception as ex:
-# #         print(ex)
-# # print("전송완료 %s, 전송량 %d" %(filename, data_transferred))
-#
-#
-#
-#
-#
-#
-#
-#
-# # ###############################압축하기
-# # import zipfile
-# # import os
-# #
-# # os.chdir('/home/aiot02/PycharmProjects/pythonProject6/iu')
-# # # my_zip = zipfile.ZipFile('iu.zip','w')
-# # # my_zip.write('iu.txt')
-# # # my_zip.close()
-# #
-# # # file_list = ['iu1.png', 'iu2.png', 'iu3.png', 'iu4.png', 'iu5.png', 'iu6.png', 'iu7.png']
-# # file_list = []
-# # for i in range(1,8):
-# #     file_list.append("iu{}.png".format(i))
-# # with zipfile.ZipFile(os.getcwd()+".zip","w")as my_zip:
-# #     for i in file_list:
-# #         my_zip.write(i)
-# #     my_zip.close()
-#
-#
-#
-#
-#
-# #
-# #
+
 # # ##############################파일 자동전송 + 압축
-# # import socket
-# # import zipfile
-# # import os
-# #
-# #
-# # os.chdir('/home/aiot02/PycharmProjects/pythonProject6/iu')
-# #
-# # file_list = []
-# # for i in range(1,8):
-# #     file_list.append("iu{}.png".format(i))
-# #
-# # with zipfile.ZipFile(os.getcwd()+".zip","w")as my_zip:
-# #     for i in file_list:
-# #         my_zip.write(i)
-# #     my_zip.close()
-# #
-# # os.chdir('/home/aiot02/PycharmProjects/pythonProject6')
-# # HOST = socket.gethostname()
-# # PORT = 5003
-# # ADDR = (HOST, PORT)
-# # BUFF_SIZE = 1024
-# #
-# # serverSocket = socket.socket()
-# # serverSocket.bind(ADDR)
-# # serverSocket.listen(5)
-# # print ('Server waiting...')
-# # while True:
-# #     clientSocket, addr = serverSocket.accept()
-# #     print ('Connection from', addr)
-# #     data = clientSocket.recv(BUFF_SIZE)
-# #     print('client : ' + data.decode())
-# #     filename='iu.zip'
-# #     #filename='iu1.png'
-# #     # f = open(filename,'rb')
-# #     with open(filename, 'rb')as f:
-# #         try:
-# #             l = f.read(BUFF_SIZE)
-# #             while (l):
-# #                 print('sending data...')
-# #                 clientSocket.send(l)
-# #                 l = f.read(BUFF_SIZE)
-# #             f.close()
-# #             print('Done sending')
-# #             clientSocket.close()
-# #         except Exception as e:
-# #             print(e)
-#
-#
-#
-#
-#
-#
-#
-#
-# # # ##############################파일 이름입력해서 받기+압축
-# #
-# # from socket import *
-# # from os.path import exists
-# # import sys
-# # import zipfile
-# # import os
-# #
-# # os.chdir('/home/aiot02/PycharmProjects/pythonProject6/iu')
-# #
-# # file_list = []
-# # for i in range(1,8):
-# #     file_list.append("iu{}.png".format(i))
-# #
-# # with zipfile.ZipFile(os.getcwd()+".zip","w")as my_zip:
-# #     for i in file_list:
-# #         my_zip.write(i)
-# #     my_zip.close()
-# #
-# # os.chdir('/home/aiot02/PycharmProjects/pythonProject6')
-# # serverSock = socket(AF_INET, SOCK_STREAM)
-# # serverSock.bind(('', 8089))
-# # serverSock.listen(1)
-# #
-# # connectionSock, addr = serverSock.accept()
-# #
-# # print(str(addr),'에서 접속했습니다')
-# # filename = connectionSock.recv(1024) #클라이언트한테 파일이름(이진 바이트 스트림 형태)을 전달 받는다
-# # print('받은 데이터 : ', filename.decode('utf-8')) #파일 이름을 일반 문자열로 변환한다
-# # data_transferred = 0
-# #
-# # if not exists(filename):
-# #     print("no file")
-# #     sys.exit()
-# #
-# # print("파일 %s 전송 시작" %filename)
-# # with open(filename, 'rb') as f:
-# #     try:
-# #         data = f.read(1024) #1024바이트 읽는다
-# #         while data: #데이터가 없을 때까지
-# #             data_transferred += connectionSock.send(data) #1024바이트 보내고 크기 저장
-# #             data = f.read(1024) #1024바이트 읽음
-# #     except Exception as ex:
-# #         print(ex)
-# # print("전송완료 %s, 전송량 %d" %(filename, data_transferred))
-#
-#
-#
-#
-#
-#
-# ##############################파일 자동전송 + 압축
 import socket
 import zipfile
 import os
-
-
-
-
 import sys
 import requests
 import pymysql
@@ -399,7 +186,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : ", img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0], '/home/aiot02/PycharmProjects/pythonProject6/HI/11번가_맨투맨{}.jpg'.format(num))
+        urlretrieve(img_src[0], './HI/11번가_맨투맨{}.jpg'.format(num))
         print("성공")
         num += 1
         print("num : " , num)
@@ -533,7 +320,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : " , img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0] , '/home/aiot02/PycharmProjects/pythonProject6/HI/11번가_셔츠{}.jpg'.format(num))                 # 이미지 저장 경로 / 이미지 이름
+        urlretrieve(img_src[0] , './HI/11번가_셔츠{}.jpg'.format(num))                 # 이미지 저장 경로 / 이미지 이름
         print("성공")
         num += 1
 
@@ -668,7 +455,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : " , img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0] , '/home/aiot02/PycharmProjects/pythonProject6/HI/11번가_청바지{}.jpg'.format(num))            # 이미지 저장 경로 / 이미지 이름
+        urlretrieve(img_src[0] , './HI/11번가_청바지{}.jpg'.format(num))            # 이미지 저장 경로 / 이미지 이름
         print("성공")
         num += 1
 
@@ -802,7 +589,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : " , img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0] , '/home/aiot02/PycharmProjects/pythonProject6/HI//11번가_슬랙스{}.jpg'.format(num))            # 이미지 저장 경로 / 이미지 이름
+        urlretrieve(img_src[0] , './HI//11번가_슬랙스{}.jpg'.format(num))            # 이미지 저장 경로 / 이미지 이름
         print("성공")
         num += 1
 
@@ -936,7 +723,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : " , img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0] , '/home/aiot02/PycharmProjects/pythonProject6/HI/11번가_코트{}.jpg'.format(num))       # 이미지 저장 경로 / 이미지 이름
+        urlretrieve(img_src[0] , './HI/11번가_코트{}.jpg'.format(num))       # 이미지 저장 경로 / 이미지 이름
         print("성공")
         num += 1
 
@@ -1071,7 +858,7 @@ try:
         img_src = img_src.split(",")
         print("img_src[0] : " , img_src[0])
         print('img/11번가_{}.jpg'.format(num))
-        urlretrieve(img_src[0] , '/home/aiot02/PycharmProjects/pythonProject6/HI/11번가_패딩{}.jpg'.format(num))    # 이미지 저장 경로 / 이미지 이름
+        urlretrieve(img_src[0] , './HI/11번가_패딩{}.jpg'.format(num))    # 이미지 저장 경로 / 이미지 이름
         print("성공")
         num += 1
 
@@ -1221,7 +1008,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_맨투맨"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_맨투맨"+str(num)))
         print("성공")
         num += 1
 
@@ -1344,8 +1131,6 @@ for a in range(0,5):
     ing4[a] = ing4[a].split('"')
 
     print("ing4[a] : ", ing4[a])
-    print("ing4[a][1] :" ,ing4[a][7])
-    print("len(ing4[a][7]) :", len(ing4[a]))
 
     if len(ing4[a]) >= 10:
         print("시작시시시시시")
@@ -1372,7 +1157,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_셔츠"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_셔츠"+str(num)))
         print("성공")
         num += 1
 
@@ -1509,7 +1294,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_청바지"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_청바지"+str(num)))
         print("성공")
         num += 1
 
@@ -1645,7 +1430,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_슬랙스"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_슬랙스"+str(num)))
         print("성공")
         num += 1
 
@@ -1794,7 +1579,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_코트"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_코트"+str(num)))
         print("성공")
         num += 1
 
@@ -1931,7 +1716,7 @@ try:
     for i in range(0,5):
         img_src = story66[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("G마켓_패딩"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("G마켓_패딩"+str(num)))
         print("성공")
         num += 1
 
@@ -2081,7 +1866,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_맨투맨"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_맨투맨"+str(num)))
         print("성공")
         num += 1
 
@@ -2218,7 +2003,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_셔츠"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_셔츠"+str(num)))
         print("성공")
         num += 1
 
@@ -2357,7 +2142,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_청바지"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_청바지"+str(num)))
         print("성공")
         num += 1
 
@@ -2494,7 +2279,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_슬랙스"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_슬랙스"+str(num)))
         print("성공")
         num += 1
 
@@ -2631,7 +2416,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_코트"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_코트"+str(num)))
         print("성공")
         num += 1
 
@@ -2768,7 +2553,7 @@ try:
     for i in range(0,5):
         img_src = ing5[i]
         print(img_src)
-        urlretrieve(img_src , '/home/aiot02/PycharmProjects/pythonProject6/HI/{}.jpg'.format("옥션_패딩"+str(num)))
+        urlretrieve(img_src , './HI/{}.jpg'.format("옥션_패딩"+str(num)))
         print("성공")
         num += 1
 
@@ -2786,7 +2571,8 @@ except:
 
 ##url## - 신세계TV 기준
 #맨투맨 - https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%A7%A8%ED%88%AC%EB%A7%A8&trackSearchType=nomal
-#셔츠 -  https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EC%85%94%EC%B8%A0&trackSearchType=nomal
+#셔츠 -  https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%82%A8%EC%84%B1%20%EC%85%94%EC%B8%A0&trackSearchType=nomal
+
 #청바지 - https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%82%A8%EC%84%B1%EC%B2%AD%EB%B0%94%EC%A7%80&trackSearchType=nomal
 #슬랙스 - https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%82%A8%EC%84%B1%EC%8A%AC%EB%9E%99%EC%8A%A4&trackSearchType=nomal
 #코트 - https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%82%A8%EC%84%B1%EC%BD%94%ED%8A%B8&trackSearchType=nomal
@@ -2932,11 +2718,29 @@ for a in range(0,5):
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
 
-    sql = 'insert into shirts values("신세계", "맨투맨", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+    ######################################사이트######################################
+    # 사이트    # 지금  https://img.shinsegaetvshopping.com/goods
+    urlllll = urllib.parse.quote("맨투맨")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into shirts values("신세계", "맨투맨", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
 
-
+    print(sql)
+    print("ing[a] :", ing[a])
 
     i += 1
 
@@ -2978,7 +2782,7 @@ for a in range(0,5):
     print("i :", i)
     print("반복횟수 [a] :", a)
 
-    url = "https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EC%85%94%EC%B8%A0&trackSearchType=nomal"
+    url = "https://www.shinsegaetvshopping.com/goods-search/search?searchKeyword=%EB%82%A8%EC%84%B1%20%EC%85%94%EC%B8%A0&trackSearchType=nomal"
     print("url :" ,url)
     source = requests.get(url).text
     soup = BeautifulSoup(source, "html.parser")
@@ -3094,9 +2898,31 @@ for a in range(0,5):
 
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
-    sql = 'insert into shirts values("신세계", "셔츠", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+
+    ######################################사이트######################################
+    # 사이트    # 지금  https://img.shinsegaetvshopping.com/goods
+    urlllll = urllib.parse.quote("남성 셔츠")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into shirts values("신세계", "셔츠", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
+
+    print(sql)
+    print("ing[a] :", ing[a])
+
     i += 1
 
 #이미지 다운로드
@@ -3253,9 +3079,27 @@ for a in range(0,5):
 
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
-    sql = 'insert into pants values("신세계", "청바지", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+
+
+    ######################################사이트######################################
+    urlllll = urllib.parse.quote("남성청바지")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into pants values("신세계", "청바지", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
+
     i += 1
 
 #이미지 다운로드
@@ -3411,7 +3255,23 @@ for a in range(0,5):
 
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
-    sql = 'insert into pants values("신세계", "슬랙스", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+
+    ######################################사이트######################################
+    urlllll = urllib.parse.quote("남성슬랙스")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into pants values("신세계", "슬랙스", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
     i += 1
@@ -3570,7 +3430,23 @@ for a in range(0,5):
 
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
-    sql = 'insert into outers values("신세계", "코트", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+
+    ######################################사이트######################################
+    urlllll = urllib.parse.quote("남성코트")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into outers values("신세계", "코트", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
     i += 1
@@ -3728,7 +3604,24 @@ for a in range(0,5):
 
     print("ing4[a] : ", ing4[a])
     print("ing4 :", ing4)
-    sql = 'insert into outers values("신세계", "패딩", {},"{}", "{}", "{}", "{}")'.format(a+1, ing[a], ing2[a], ing3[a], ing4[a])
+
+
+    ######################################사이트######################################
+    urlllll = urllib.parse.quote("남성패딩")
+    print("urlllll :", urlllll)
+    ing5.append(ing4[a])
+    ing5[a] = ing5[a].replace("https://img.shinsegaetvshopping.com/goods", '')
+    k = 0
+    for k in range(0, 1000):
+        ing5[a] = ing5[a].replace("/{}/".format(k), "")
+    ing5[a] = ing5[a].split("_")
+    ing5[a] = "https://www.shinsegaetvshopping.com/display/detail/" + ing5[a][
+        0] + "?" + urlllll + "&trackSearchType=nomal&trackCurationType=c_search_normal"
+    print("ing5[a] : ", ing5[a])
+    print("ing5 :", ing5)
+
+    sql = 'insert into outers values("신세계", "패딩", {},"{}", "{}", "{}", "{}")'.format(a + 1, ing[a], ing2[a], ing3[a],
+                                                                                      ing5[a])
     cur.execute(sql)
     conn.commit()
     i += 1
@@ -3764,7 +3657,7 @@ conn.close()
 
 
 
-os.chdir('/home/aiot02/PycharmProjects/pythonProject6/HI')
+os.chdir('./HI')
 
 file_list_1 = []
 file_list_2 = []
@@ -3817,9 +3710,9 @@ with zipfile.ZipFile(os.getcwd()+".zip","w")as my_zip:
         my_zip.write(i)
     my_zip.close()
 
-os.chdir('/home/aiot02/PycharmProjects/pythonProject6')
+os.chdir('./')
 # HOST = socket.gethostname()
-HOST = '10.10.21.102'
+HOST = '10.10.21.108'
 PORT = 5003
 ADDR = (HOST, PORT)
 BUFF_SIZE = 1024
